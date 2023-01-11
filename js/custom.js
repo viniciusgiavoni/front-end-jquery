@@ -49,14 +49,61 @@ $(document).ready(function(){
 
      })
      
+     /* 
+     * callback
+     *
+     * 
+     */
+
+     $('.featured-item:nth(1)')
+      .hide(2000, function(){
+         ( $(this).find('h4').text() + ' esgotado')
+     })
+      .show(2000, function(){
+         ( $(this).find('h4').text() + ' em estoque')
+      })
      
      
-     
+      /*
+      * Animações
+      *
+      */
+      const duracao = 1000 // equivalente a 1 segundo
+      $('.featured-item:nth(1)')
+         .hide(duracao)
+         .show(duracao)
+         .fadeOut(duracao)
+         .fadeIn(duracao)
+
+      $('#form-submit').on('click', function(e){
+         e.preventDefault()
+         if($('#email').val().length < 1 ){
+            
+            $('#email').animate({'border': '2px solid #f00'})
+         }
+      })
 
 
+      /*
+      *
+      * Ouvinte de eventos .nav-modal-open
+      * 
+      */
+      $('.nav-modal-open').on('click', function(e){
+         e.preventDefault();
+
+         let elem = $(this).attr('rel')
+
+         $('.modal-body').html($('#'+elem).html())
+
+         $('.modal-header h5.modal-title').html($(this).text())
 
 
+         let myModal = new bootstrap.Modal($('#modalId'))
 
+         myModal.show()
+
+      })
 
 
 })
