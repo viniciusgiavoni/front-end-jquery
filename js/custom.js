@@ -105,5 +105,92 @@ $(document).ready(function(){
 
       })
 
+      /*
+       *TODO: incrementar na validação
+       * - checar se o nome é válido (com pelo menos 2 caracteres)
+       * - checar se o email é válido com "@" e pelo menos um "."
+       */
+
+      function validate( elem ){
+
+         if( elem.val() == '') {
+
+            console.log('o campo de '+ elem.attr('name') + ' é obrigatório')
+   
+            elem.addClass('invalid')
+
+            return false
+
+         } else {
+            elem.removeClass('invalid')
+         }
+
+      }
+
+      $('body').on('submit', '.modal-body .form', function(e){
+
+         e.preventDefault()
+
+         const inputDate = $('#date')
+         const inputTime = $('#time')
+         const inputCep = $('#cep')
+         const inputPhone = $('#phone')
+         const inputCpf = $('#cpf')
+
+         validate(inputDate)
+         validate(inputTime)
+         validate(inputCep)
+         validate(inputPhone)
+         validate(inputCpf)
+
+         if( inputDate.hasClass('invalid') || inputTime.hasClass('invalid') || inputCep.hasClass('invalid') || inputPhone.hasClass('invalid') || inputCpf.hasClass('invalid')){
+            console.log('verificar campos obrigatórios')
+            return false
+         } else {
+            $(this).submit()
+         }
+
+      })
+
+
+      //$('body').on('blur', '#date', function(){
+
+      //   validate($(this))
+      //   $('#date').mask('00/00/0000');
+      //})
+
+      $('body').on('blur', '#datepicker', function(){
+
+         $(this).datepicker();
+         validate($(this))
+         $('#datepicker').mask('00/00/0000');
+
+      })
+
+      $('body').on('blur', '#time', function(){
+
+         validate($(this))
+         $('#time').mask('00:00');
+      })
+
+      $('body').on('blur', '#cep', function(){
+
+         validate($(this))
+         $('#cep').mask('00000-000');
+      })
+
+      $('body').on('blur', '#phone', function(){
+
+         validate($(this))
+         $('#phone').mask('(00) 00000-0000');
+      })
+
+      $('body').on('blur', '#cpf', function(){
+
+         validate($(this))
+         $('#cpf').mask('000.000.000-00');
+      })
+
+
 
 })

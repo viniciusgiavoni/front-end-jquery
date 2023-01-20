@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./vendor/owl/css/owl.css">
     <link rel="stylesheet" href="./vendor/fontawesome/fontawesome.css">
+    <link rel="stylesheet" href="./vendor/jquery-ui/jquery-ui-1.13.2.custom/jquery-ui.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <title>jQuery</title>
 </head>
@@ -21,12 +22,10 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home
-                            <span class="sr-only">(current)</span>
-                        </a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="products.html">Produtos</a>
+                        <a class="nav-link" href="#featured">Produtos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link nav-modal-open" href="about.html" rel="sobre">Sobre nós</a>
@@ -241,18 +240,36 @@
         
         <form action="" class="form">
             <div class="mb-3">
-              <label for="nome" class="form-label">Nome</label>
-              <input type="text" name="nome" id="nome" class="form-control" placeholder="Digite seu nome" aria-describedby="helpNome">
-              <small id="helpNome" class="text-muted">Digite um nome válido</small>
+                <label for="date" class="form-label">Data</label>
+                <input type="text" name="date" id="datepicker" class="form-control" placeholder="00/00/0000" aria-describedby="helpNome">
+                <small id="helpNome" class="text-muted">Digite a data</small>
             </div>
 
             <div class="mb-3">
-                <label for="e-mail" class="form-label"><E-mail></E-mail></label>
-                <input type="text" name="e-mail" id="e-mail" class="form-control" placeholder="Digite seu email" aria-describedby="helpNome">
-                <small id="helpNome" class="text-muted">Digite um e-mail válido</small>
-              </div>
+                <label for="time" class="form-label">Hora</label>
+                <input type="text" name="time" id="time" class="form-control" placeholder="00:00" aria-describedby="helpNome">
+                <small id="helpNome" class="text-muted">Digite a hora</small>
+            </div>
 
-              <button type="submit" class="btn btn-primary">Enviar</button>
+            <div class="mb-3">
+                <label for="cep" class="form-label">Cep</label>
+                <input type="text" name="cep" id="cep" class="form-control" placeholder="00000-000" aria-describedby="helpNome">
+                <small id="helpNome" class="text-muted">Digite seu cep</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Telefone</label>
+                <input type="text" name="phone" id="phone" class="form-control" placeholder="(00) 00000-0000)" aria-describedby="helpNome">
+                <small id="helpNome" class="text-muted">Digite um telefone válido</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" name="cpf" id="cpf" class="form-control" placeholder="000.000.000-00" aria-describedby="helpNome">
+                <small id="helpNome" class="text-muted">Digite seu CPF</small>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
               
         </form>       
     </div>
@@ -273,6 +290,8 @@
         <script src="./vendor/jquery/jquery-3.6.0.min.js"></script>
         <script src="./vendor/bootstrap/js/bootstrap.min.js"></script>
         <script src="./vendor/owl/js/owl.js"></script>
+        <script src="./vendor/jquery-mask/jquery.mask.min.js"></script>
+        <script src="./vendor/jquery-ui/jquery-ui-1.13.2.custom/jquery-ui.min.js"></script>
         <script src="./js/custom.js"></script>
     </body>
     </html>
